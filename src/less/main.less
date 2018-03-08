@@ -26,11 +26,14 @@ h1,h2,h3,p {
 
 .container {
   z-index: 1;
+  
   &--flex {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
+
+    height: 100%;
   }
 
   &--center {
@@ -42,10 +45,15 @@ h1,h2,h3,p {
 .header {
   &__row {
     background-color: @white;
-
+    
+    &--top {
+      height: 120px;
+    }
     &--menu {
       background-color: @blue;
       position: relative;
+      
+      height: 70px;
 
       &:after {
         content: '';
@@ -210,7 +218,16 @@ h1,h2,h3,p {
 
 
 .callback {
-  text-align: right;
+  margin-bottom: 25px;
+
+  &--right {
+    text-align: right;
+    margin-bottom: 0;
+
+    .callback__link {
+      margin-bottom: 0;
+    }
+  }
   
   &__title {
     color: @orange;
@@ -309,7 +326,7 @@ h1,h2,h3,p {
 
   &__all {
     position: absolute;
-    right: 0;
+    right: 15px;
     top: 10px;
     font-weight: 600;
   }
@@ -355,8 +372,10 @@ h1,h2,h3,p {
 
 .about {
   border-top: 1px solid @yellow;
+  padding-top: 50px;
   display: flex;
   justify-content: space-between;
+
 
   &__map {
     width: 65%;
@@ -381,7 +400,75 @@ h1,h2,h3,p {
     top: 0;
   }
 
+  &__title {
+    position: relative;
+    
+    margin-bottom: 20px;
+
+    color:@orange;
+    text-transform: lowercase;
+    font-family: "RobotoSlab";
+    font-weight: 600;
+    
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 260px;
+      height: 1px;
+      background-color: @orange;
+    }
+  }
+
+  &__text {
+    color:@orange;
+    font-weight: 400;
+    font-size: 14px;
+    width: 150px;
+    margin-bottom: 15px;
+  }
+  
+  &__params {
+    display: flex;
+    justify-content: space-between;
+  }
+
 }
+
+.list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  
+  
+
+  &__item {
+    margin-bottom: 5px;
+    &--param {
+      position: relative;
+      padding-left: 30px;
+      
+      &:before {
+        content: '';
+        position: absolute;
+
+        left: 0;
+        top: 0;
+
+        width: 15px;
+        height: 15px;
+
+      }
+    }
+
+    &--purple:before {background-color: @purple;}
+    &--orange:before {background-color: @orange;}
+    &--red:before {background-color: @red;}
+  }
+}
+
 .footer {
   height: 600px;
 
