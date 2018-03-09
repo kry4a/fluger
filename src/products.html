@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Флюгер</title>
+  <link rel="stylesheet" href="./css/libs.min.css">
+  <link rel="stylesheet" href="./css/bundle.css">
+</head>
+<body>
+  @@include('_html/_header.html')  
+  <main class="main">
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title section__title--blue">ваши любимые товары</h2>
+        <div class="products">
+          @@include('_html/_products.html')
+          @@include('_html/_products.html')
+          @@include('_html/_products.html')
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="section__title section__title--blue">вся продукция</h2>
+        <div class="table">
+          <div class="table__row table__row--blue">
+            <div class="table__cell">
+              <p class="table__title table__title--fish">рыба</p>
+            </div>
+          </div>
+          @@include('_html/_rows.html')
+
+          <div class="table__row table__row--purple">
+            <div class="table__cell">
+              <p class="table__title table__title--fish">снеки</p>
+            </div>
+          </div>
+          @@include('_html/_rows.html')
+
+          <div class="table__row table__row--orange">
+            <div class="table__cell">
+              <p class="table__title table__title--crack">сухарики, гренки</p>
+            </div>
+          </div>
+          @@include('_html/_rows.html')
+
+          <div class="table__row table__row--green">
+            <div class="table__cell">
+              <p class="table__title table__title--nut">орешки, глазурь</p>
+            </div>
+          </div>
+          @@include('_html/_rows.html')
+
+          <div class="table__row table__row--red">
+            <div class="table__cell">
+              <p class="table__title table__title--meat">мясо, колбаски</p>
+            </div>
+          </div>
+          @@include('_html/_rows.html')
+
+          <div class="table__row table__row--yellow">
+            <div class="table__cell">
+              <p class="table__title table__title--crisp">чипсы, шарики</p>
+            </div>
+          </div>
+          @@include('_html/_rows.html')
+
+          <div class="table__row table__row--orange">
+            <div class="table__cell">
+              <p class="table__title table__title--cheese">сыр</p>
+            </div>
+          </div>
+          @@include('_html/_rows.html')
+
+          <div class="table__row table__row--red">
+            <div class="table__cell">
+              <p class="table__title table__title--caviar">икра</p>
+            </div>
+          </div>
+          @@include('_html/_rows.html')
+        </div>
+      </div>
+    </section>
+  </main>
+  @@include('_html/_footer.html')  
+  <script type="text/javascript" src="./js/libs.min.js"></script>
+  <script type="text/javascript" src="./js/bundle.js"></script>
+</body>
+</html>

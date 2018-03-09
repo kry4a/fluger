@@ -7,46 +7,7 @@
   <link rel="stylesheet" href="./css/bundle.css">
 </head>
 <body>
-  <header class="header">
-    <div class="header__row header__row--top">
-      <div class="container container--flex container--center">
-        <div class="header__item header__item--logo">
-          <img src="./img/logo.png" alt="" class="img img--responsive">
-        </div>
-        <div class="header__item header__item--nav">
-          <ul class="nav">
-            <li class="nav__item"><a href="#" class="nav__link">О нас</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">О продукции</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Контакты</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">Прайс-лист</a></li>
-          </ul>
-        </div>
-        <div class="header__item header__item--callback">
-          <div class="callback callback--right">
-            <p class="callback__title">звони</p>
-            <a href="tel:89219668313" class="callback__link callback__link--blue">+7 921 966 83 13</a>
-            <a href="tel:89516462739" class="callback__link callback__link--blue">+7 951 646 27 39</a>
-          </div>
-        </div>
-      </div>  
-    </div>
-    <div class="header__row header__row--menu">
-      <nav class="navbar">
-        <div class="container header__container">
-          <ul class="navbar__nav nav">
-            <li class="nav__item"><a href="#" class="nav__link nav__link--white">рыба</a></li>
-            <li class="nav__item"><a href="#" class="nav__link nav__link--white">снеки</a></li>
-            <li class="nav__item"><a href="#" class="nav__link nav__link--white">чипсы</a></li>
-            <li class="nav__item"><a href="#" class="nav__link nav__link--white">гренки</a></li>
-            <li class="nav__item"><a href="#" class="nav__link nav__link--white">орешки</a></li>
-            <li class="nav__item"><a href="#" class="nav__link nav__link--white">мясо</a></li>
-            <li class="nav__item"><a href="#" class="nav__link nav__link--white">сыр</a></li>
-            <li class="nav__item"><a href="#" class="nav__link nav__link--white">икра</a></li>
-          </ul>
-        </div>
-      </nav>  
-    </div>
-  </header>
+  @@include('_html/_header.html')  
   <main class="main">
     <section class="section section--slider">
       <ul class="slider slider--main">
@@ -61,7 +22,7 @@
         </li>
       </ul>
     </section>
-    <section class="section section--yellow">
+    <section class="section section--yellow" id="info">
       <div class="container">
         <div class="info">
           <div class="info__item">
@@ -90,62 +51,11 @@
         <h2 class="section__title section__title--blue">ваши любимые товары</h2>
         <a href="#" class="link link--red products__all">перейти к списку продуктов</a>
         <div class="products">
-          <div class="product">
-            <div class="product__image">
-              <img src="./img/product-1.png" alt="" class="img img--responsive">
-            </div>
-            <div class="product__info">
-              <div class="product__title">Щука</div>
-              <div class="product__desc">Холодного копчения</div>
-            </div>
-            <div class="product__params">
-              <div class="product__weight">1.5кг</div>
-              <div class="product__price">4500 руб./уп.</div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="product__image">
-              <img src="./img/product-2.png" alt="" class="img img--responsive">
-            </div>
-            <div class="product__info">
-              <div class="product__title">Камбала</div>
-              <div class="product__desc">Горячего копчения</div>
-            </div>
-            <div class="product__params">
-              <div class="product__weight">1.5кг</div>
-              <div class="product__price">8600 руб./уп.</div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="product__image">
-              <img src="./img/product-1.png" alt="" class="img img--responsive">
-            </div>
-            <div class="product__info">
-              <div class="product__title">Щука</div>
-              <div class="product__desc">Холодного копчения</div>
-            </div>
-            <div class="product__params">
-              <div class="product__weight">1.5кг</div>
-              <div class="product__price">4500 руб./уп.</div>
-            </div>
-          </div>
-          <div class="product">
-            <div class="product__image">
-              <img src="./img/product-2.png" alt="" class="img img--responsive">
-            </div>
-            <div class="product__info">
-              <div class="product__title">Камбала</div>
-              <div class="product__desc">Горячего копчения</div>
-            </div>
-            <div class="product__params">
-              <div class="product__weight">1.5кг</div>
-              <div class="product__price">8600 руб./уп.</div>
-            </div>
-          </div>
+          @@include('_html/_products.html')
         </div>
       </div>
     </section>
-    <section class="section section--about">
+    <section class="section section--about" id="about">
       <div class="container">
         <div class="about">
           <div class="about__map">
@@ -197,38 +107,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
-    <div class="container container--flex">
-      <div class="footer__left">
-        <h2 class="section__title section__title--blue">Контакты</h2>
-        <div class="callback">
-          <p class="callback__title">звони</p>
-          <a href="tel:89219668313" class="callback__link">+7 921 966 83 13 <span class="callback__name">Алексей</span></a> 
-          <a href="tel:89516462739" class="callback__link">+7 951 646 27 39</a>
-        </div>
-        <div class="callback">
-          <p class="callback__title">звони</p>
-          <a href="tel:89219668313" class="callback__link">+7 904 604 40 70 <span class="callback__name">Матвей</span></a> 
-          <a href="tel:89219668313" class="callback__link">+7 904 609 33 52 <span class="callback__name">Константин</span></a> 
-        </div>
-        <div class="callback">
-          <p class="callback__title">пиши</p>
-          <a href="mailto:info@fluger-spb.ru" class="callback__link">info@fluger-spb.ru</a>
-        </div>
-        <p class="section__text section__text--small">Мы рады помочь вам и ответить на любые вопросы, по телефону или мейлу,<br>ежедневно, с 9-22.00 по мск.</p>
-      </div>
-      <div class="footer__right">
-        <h2 class="section__title section__title--white">почему выбирают <br>«флюгер»</h2>
-        <ul class="list list--icons">
-          <li class="list__item list__item--icon list__item--fresh">Всегда свежий продукт</li>
-          <li class="list__item list__item--icon list__item--detail">Мы внимательны к делалям <span class="small">*</span></li>
-          <li class="list__item list__item--icon list__item--nsew">Работаем по всему Петербургу</li>
-          <li class="list__item list__item--icon list__item--percent">Выгодные партнерские программы</li>
-        </ul>
-        <p class="section__text section__text--small mb">* по отзывам наших клиентов</p>
-      </div>
-    </div>
-  </footer>
+  @@include('_html/_footer.html')  
   <script type="text/javascript" src="./js/libs.min.js"></script>
   <script type="text/javascript" src="./js/bundle.js"></script>
 </body>

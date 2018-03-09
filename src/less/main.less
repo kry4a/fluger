@@ -406,7 +406,7 @@ h1,h2,h3,p {
   position: relative;
   display: flex;
   justify-content: space-between;
-  
+  flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
   &__all {
@@ -420,9 +420,9 @@ h1,h2,h3,p {
   width: 25%;
   max-width: 25%;
   padding: 0 15px;
-
-  cursor: pointer;
   
+  cursor: pointer;
+  margin-bottom: 45px;
   &:hover {
     .product__image {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -466,6 +466,27 @@ h1,h2,h3,p {
 
   &__price {
     color:@blue;
+  }
+
+  &__storage {
+    position: relative;
+    padding-left: 45px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin:auto;
+      width: 18px;
+      height: 18px;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    &--cold:before { background-image: url('../img/icon-cold.png');}
+    &--warm:before { background-image: url('../img/icon-hot.png');}
   }
 }
 
@@ -701,12 +722,78 @@ h1,h2,h3,p {
       }
     }
     
-    
+  }
+}
 
+
+.table {
+  &__row {
+    display: flex;
+    justify-content: space-between;
+
+
+    &--blue { background-color: @blue; }
+    &--yellow { background-color: @yellow; }
+    &--orange { background-color: @orange; }
+    &--red { background-color: @red; }
+    &--purple { background-color: @purple; }
+    &--green { background-color: @green; }
+    &--tomato { background-color: @tomato; }
+
+    &--bb {
+      border-bottom: 1px solid @black;
+    }
   }
 
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
+    height: 70px;
+    width: 25%;
+    text-align: center;
 
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  &__title {
+    padding-left: 120px;
+    position: relative;
+    color:@white;
+    font-size: 18px;
+    max-width: 240px;
+    text-align: left;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+
+      width: 40px;
+      height: 40px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+    }
+
+    &--fish:before { background-image: url('../img/icon-fish.png');}
+    &--crack:before { background-image: url('../img/icon-crack.png');}
+    &--nut:before { background-image: url('../img/icon-nut.png');}
+    &--meat:before { background-image: url('../img/icon-meat.png');}
+    &--crisp:before { background-image: url('../img/icon-crisp.png');}
+    &--cheese:before { background-image: url('../img/icon-cheese.png');}
+    &--caviar:before { background-image: url('../img/icon-caviar.png');}
+  }
 }
 
 .footer {

@@ -19,6 +19,17 @@ $(function (){
     }
   });
 
+  $('body').delegate('.scroll-to-target', 'click', function(e) {
+    console.log('scroll-to-target');
+    var target = $(this).attr('href');
+    var offset = 200;
+    if ($(this).data('offset') != undefined) offset = $(this).data('offset');
+    
+    $.scrollTo(target, 600, { offset: -offset });
+    
+    return false;
+  });
+
 });
 
 
