@@ -34,27 +34,29 @@
       <nav class="navbar">
         <div class="container header__container">
           <ul class="navbar__nav nav">
-            <li class="nav__item"><a href="#" class="nav__link">рыба</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">снеки</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">чипсы</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">гренки</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">орешки</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">мясо</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">сыр</a></li>
-            <li class="nav__item"><a href="#" class="nav__link">икра</a></li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--white">рыба</a></li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--white">снеки</a></li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--white">чипсы</a></li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--white">гренки</a></li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--white">орешки</a></li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--white">мясо</a></li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--white">сыр</a></li>
+            <li class="nav__item"><a href="#" class="nav__link nav__link--white">икра</a></li>
           </ul>
         </div>
       </nav>  
     </div>
   </header>
-  <main>
+  <main class="main">
     <section class="section section--slider">
       <ul class="slider slider--main">
         <li class="slider__item">
           <img src="./img/slider-1.jpg" alt="" class="img img--responsive slider__img">
-          <div class="slider__desc">
-            <p class="slider__title">дуй туда, где рыба!</p>
-            <p class="slider__text">доставка снеков оптом СПБ</p>
+          <div class="container">
+            <div class="slider__desc">
+              <p class="slider__title">дуй туда, где рыба!</p>
+              <p class="slider__text">доставка снеков оптом СПБ</p>
+            </div>
           </div>
         </li>
       </ul>
@@ -65,9 +67,9 @@
           <div class="info__item">
             <h2 class="info__title">Туда, где снеки</h2>
             <p class="section__text">«Флюгер» — это надёжный партнёр, который поставляет вкуснейшую вяленую рыбу, снеки из морепродуктов, мясные снеки, сухарики и орешки, в целом более 200 наименований различных закусок в любой уголок Санкт-Петербурга.</p>
-            <ul class="list-text">
-              <li>мы предлагаем продукт со всех концов России.</li>              
-              <li>всегда свежий и всегда в срок.</li>
+            <ul class="list list--text">
+              <li class="list__item list__item--white">мы предлагаем продукт со всех концов России.</li>              
+              <li class="list__item list__item--white">всегда свежий и всегда в срок.</li>
             </ul>
           </div>
           <div class="info__item">
@@ -146,44 +148,50 @@
     <section class="section section--about">
       <div class="container">
         <div class="about">
-          <div class="about__map map">
+          <div class="about__map">
             <h2 class="section__title section__title--blue">Рыба с севера, юга, <br>запада и востока</h2>
-            <div class="map__parallax">
-              <div class="map__layer"><img src="./img/map-1.png" alt="" class="img img--responsive"></div>
-              <div class="map__layer"><img src="./img/map-2.png" alt="#" class="img img--responsive"></div>
-              <div class="map__layer"><img src="./img/map-3.png" alt="" class="img img--responsive"></div>
-              <div class="map__layer"><img src="./img/map-4.png" alt="" class="img img--responsive"></div>
-            </div>
-            <div class="map__info">
-              <h2 class="map__title">Условные <br>обозначения</h2>
-              <div class="map__params">
-                <div class="map__param">
-                  <p class="map__text">число видов рыб в речных бассейнах и акваториях морей</p>
-                  <ul class="list list--params">
-                    <li class="list__item list__item--param list__item--purple">240-610</li>
-                    <li class="list__item list__item--param list__item--red">60-240</li>
-                    <li class="list__item list__item--param list__item--orange">20-60</li>
-                  </ul>
-                </div>
-                <div class="map__param">
-                  <p class="map__text">площадь речного бассейна или аквато&shy;рии моря (тыс. км<span class="top">2</span>)</p>
-                  <ul class="list list--fluger">
-                    <li class="list__item">более 1700</li>
-                    <li class="list__item">750-1700</li>
-                    <li class="list__item">150-750</li>
-                  </ul>
+            <div class="map">
+              <div class="map__parallax">
+                <div class="map__layer"><img src="./img/map-1.png" alt="" class="img img--responsive"></div>
+                <div class="map__layer"><img src="./img/map-2.png" alt="#" class="img img--responsive"></div>
+                <div class="map__layer"><img src="./img/map-3.png" alt="" class="img img--responsive"></div>
+                <div class="map__layer"><img src="./img/map-4.png" alt="" class="img img--responsive"></div>
+              </div>
+              <div class="map__info">
+                <h2 class="map__title">Условные <br>обозначения</h2>
+                <div class="map__params">
+                  <div class="map__param">
+                    <p class="map__text">число видов рыб в речных бассейнах и акваториях морей</p>
+                    <ul class="list list--params">
+                      <li class="list__item list__item--param list__item--purple">240-610</li>
+                      <li class="list__item list__item--param list__item--red">60-240</li>
+                      <li class="list__item list__item--param list__item--orange">20-60</li>
+                    </ul>
+                  </div>
+                  <div class="map__param">
+                    <p class="map__text">площадь речного бассейна или аквато&shy;рии моря (тыс. км<span class="top">2</span>)</p>
+                    <ul class="list list--fluger">
+                      <li class="list__item list__item--fluger list__item--fluger-purple">более 1700</li>
+                      <li class="list__item list__item--fluger list__item--fluger-red">750-1700</li>
+                      <li class="list__item list__item--fluger list__item--fluger-orange">150-750</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="about__text">
-            <h2 class="section__title section__title--yellow">Лучшие поставщики - лучшая рыба</h2>
-            <p class="section__text">Для того. чтобы выбрать качественную продукцию, надо учитывать множество факторов, и в этом заключается секрет настоящего мастера своего дела. В зависимости от сезона. погоды и питания рыба обладает разной консистенцией и жирностью. Наша цель - только насыщенный и яркий вкус в любое время года.</p>
-            <p class="section__text">Мы тщательно оцениваем запах и цвет рыбы, количество влаги и соли, чтобы наша рыба могла составить идеальную компанию кружке хмельного напитка, создавая теплую атмосферу дружеских посиделок.</p>
-            <p class="section__text">Многих своих поставщиков, которые теперь стали друзьями, мы знаем еще со времени основания компании. потому что предлагаем только самое лучшее. ведь качество для нас - дело чести.</p>
-            <h2 class="section__title section__title--yellow">Либо свежак, либо никак</h2>
-            <p class="section__text">Более 25 лет опта позволяют нам строить логистику так, чтобы в любой момент мы могли предоставить только свежую продукцию и очень, очень быстро.</p>
-            <p class="section__text">А главное, мы учитываем специфику бизнеса заказчика и предлагаем ассортимент, который понравится покупателям, будь то рыбный магазин, бар или магазин разливного пива.</p>
+          <div class="about__info">
+            <div class="about__text">
+              <h2 class="section__title section__title--yellow">Лучшие поставщики - лучшая рыба</h2>
+              <p class="section__text">Для того. чтобы выбрать качественную продукцию, надо учитывать множество факторов, и в этом заключается секрет настоящего мастера своего дела. В зависимости от сезона. погоды и питания рыба обладает разной консистенцией и жирностью. Наша цель - только насыщенный и яркий вкус в любое время года.</p>
+              <p class="section__text">Мы тщательно оцениваем запах и цвет рыбы, количество влаги и соли, чтобы наша рыба могла составить идеальную компанию кружке хмельного напитка, создавая теплую атмосферу дружеских посиделок.</p>
+              <p class="section__text">Многих своих поставщиков, которые теперь стали друзьями, мы знаем еще со времени основания компании. потому что предлагаем только самое лучшее. ведь качество для нас - дело чести.</p>
+            </div>
+            <div class="about__text">
+              <h2 class="section__title section__title--yellow">Либо свежак, либо никак</h2>
+              <p class="section__text">Более 25 лет опта позволяют нам строить логистику так, чтобы в любой момент мы могли предоставить только свежую продукцию и очень, очень быстро.</p>
+              <p class="section__text">А главное, мы учитываем специфику бизнеса заказчика и предлагаем ассортимент, который понравится покупателям, будь то рыбный магазин, бар или магазин разливного пива.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -195,29 +203,29 @@
         <h2 class="section__title section__title--blue">Контакты</h2>
         <div class="callback">
           <p class="callback__title">звони</p>
-          <a href="tel:89219668313" class="callback__link">+7 921 966 83 13</a> Алексей
+          <a href="tel:89219668313" class="callback__link">+7 921 966 83 13 <span class="callback__name">Алексей</span></a> 
           <a href="tel:89516462739" class="callback__link">+7 951 646 27 39</a>
         </div>
         <div class="callback">
           <p class="callback__title">звони</p>
-          <a href="tel:89219668313" class="callback__link">+7 904 604 40 70</a> Матвей
-          <a href="tel:89219668313" class="callback__link">+7 904 609 33 52</a> Константин
+          <a href="tel:89219668313" class="callback__link">+7 904 604 40 70 <span class="callback__name">Матвей</span></a> 
+          <a href="tel:89219668313" class="callback__link">+7 904 609 33 52 <span class="callback__name">Константин</span></a> 
         </div>
         <div class="callback">
           <p class="callback__title">пиши</p>
           <a href="mailto:info@fluger-spb.ru" class="callback__link">info@fluger-spb.ru</a>
         </div>
-        <p class="section__text section__text--small">Мы рады помочь вам и ответить на любые вопросы, по телефону или мейлу, ежедневно, с 9-22.00 по мск.</p>
+        <p class="section__text section__text--small">Мы рады помочь вам и ответить на любые вопросы, по телефону или мейлу,<br>ежедневно, с 9-22.00 по мск.</p>
       </div>
       <div class="footer__right">
-        <h2 class="section__title section__title--white">Почему выбирают "флюгер"</h2>
+        <h2 class="section__title section__title--white">почему выбирают <br>«флюгер»</h2>
         <ul class="list list--icons">
-          <li class="list__item list__item--fresh">Всегда свежий продукт</li>
-          <li class="list__item list__item--detail">Мы внимательны к делалям <span class="small">*</span></li>
-          <li class="list__item list__item--nsew">Работаем по всему Петербургу</li>
-          <li class="list__item list__item--percent">Выгодные партнерские программы</li>
+          <li class="list__item list__item--icon list__item--fresh">Всегда свежий продукт</li>
+          <li class="list__item list__item--icon list__item--detail">Мы внимательны к делалям <span class="small">*</span></li>
+          <li class="list__item list__item--icon list__item--nsew">Работаем по всему Петербургу</li>
+          <li class="list__item list__item--icon list__item--percent">Выгодные партнерские программы</li>
         </ul>
-        <p class="section__text section__text--small">* по отзывам наших клиентов</p>
+        <p class="section__text section__text--small mb">* по отзывам наших клиентов</p>
       </div>
     </div>
   </footer>
