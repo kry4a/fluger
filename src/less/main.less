@@ -34,11 +34,21 @@ h1,h2,h3,p {
     justify-content: space-between;
 
     height: 100%;
+
+    @media @mobiles {
+      display: block;
+    }
   }
 
   &--center {
     align-items: center;
     align-content: center;
+  }
+
+  &--blue {
+    background-color: @blue;
+    height: 100%;
+    padding-right: 50px;
   }
 }
 
@@ -75,8 +85,48 @@ h1,h2,h3,p {
   &__row {
     background-color: @white;
     
+    &--mobiles {
+      display: none;
+      height: 40px;
+      background-color: @yellow;
+      position: relative;
+      padding-left: 45px;
+      text-align: right;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 45px;
+        top: 0;
+        border: 20px solid transparent; 
+        border-left: 20px solid @yellow; 
+        z-index: 2;
+
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        left: 40px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: @blue;
+        z-index: 3;
+      }
+      @media @mobiles {
+        display: block;
+      }
+    }
+
     &--top {
       height: 120px;
+      @media @mobiles {
+        display: none;
+      }
     }
     &--menu {
       background-color: @blue;
@@ -95,6 +145,9 @@ h1,h2,h3,p {
         z-index: 0;
         background-color: @yellow;
       }
+      @media @mobiles {
+        display: none;
+      }
     }
   }
 
@@ -109,6 +162,47 @@ h1,h2,h3,p {
 
     &--callback {
 
+    }
+  }
+}
+
+.pager {
+  height: 40px;
+  line-height: 40px;
+  color: #ffffff;
+}
+
+.navbar-toggler {
+  display: none;
+  
+  border: none;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  margin:auto;
+  @media @mobiles {
+    display: block;
+  }
+  
+  &__bar {
+    background: @white;
+    display: block;
+    width: 100%;
+    height: 4px;
+    margin-bottom: 4px;
+    
+
+    &--sm {
+      height: 2px;
+      margin-bottom: 5px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
@@ -184,6 +278,7 @@ h1,h2,h3,p {
     &--blue {
       color:@blue;
       font-size: 32px;
+
     } 
 
     &--yellow {
@@ -346,6 +441,10 @@ h1,h2,h3,p {
     position: relative;
     height: 500px;
     overflow: hidden;
+
+    @media @mobiles {
+      height: 400px;
+    }
   }
 
   &__desc {
@@ -369,6 +468,11 @@ h1,h2,h3,p {
 
   &__img {
     position: absolute;
+
+    @media @mobiles {
+      height: 100%;
+      width: auto;
+    }
   }
 }
 
@@ -383,6 +487,13 @@ h1,h2,h3,p {
 
   &__item {
     padding: 0 15px;
+    @media @mobiles {
+      margin-bottom: 30px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__title {
@@ -393,12 +504,23 @@ h1,h2,h3,p {
     margin-bottom: 40px;
     line-height: 30px;
     text-transform: lowercase;
-
+    
+    @media @mobiles {
+      margin-bottom: 15px;
+    }
+    
     &--clear {
       height: 30px;
       margin-bottom: 40px;
+      @media @mobiles {
+        display: none;
+      }
     }
 
+  }
+
+  @media @mobiles {
+    display: block;
   }
 }
 
@@ -414,6 +536,16 @@ h1,h2,h3,p {
     right: 15px;
     top: 10px;
     font-weight: 600;
+
+    @media @mobiles {
+      position: relative;
+      right: unset;
+      top: unset;
+    }
+  }
+
+  @media @mobile-xs {
+    display: block;
   }
 }
 .product {
@@ -467,6 +599,16 @@ h1,h2,h3,p {
   &__price {
     color:@blue;
   }
+
+  @media @mobile-xs {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 30px;
+  }
+  @media @mobile {
+    width: 50%;
+    max-width: 50%;
+  }
 }
 
 .storage {
@@ -497,10 +639,16 @@ h1,h2,h3,p {
 
   &__map {
     width: 65%;
+    @media @mobiles {
+      width: 100%;
+    }
   }
 
   &__info {
     width: 25%;
+    @media @mobiles {
+      width: 100%;
+    }
   }
 
   &__text {
@@ -511,6 +659,10 @@ h1,h2,h3,p {
     }
   }
 
+
+  @media @mobiles {
+    display: block;
+  }
 
 }
 
@@ -534,6 +686,9 @@ h1,h2,h3,p {
   &__parallax {
     position: relative;
     height: 400px;
+    @media @mobiles {
+      height: 300px;
+    }
   }
 
   &__layer {
@@ -576,6 +731,9 @@ h1,h2,h3,p {
     display: flex;
     justify-content: space-between;
     width: 95%;
+    @media @mobiles {
+      display: block;
+    }
   }
 
 }
@@ -806,6 +964,10 @@ h1,h2,h3,p {
     left: 0;
     top: 0;
     background-color: @yellow;
+
+    @media @mobiles {
+      content: none;
+    }
   }
   
   &:after {
@@ -816,6 +978,10 @@ h1,h2,h3,p {
     width: 50%;
     height: 100%;
     background-color: @blue;
+
+    @media @mobiles {
+      content: none;
+    }
   }
   
   &__left,&__right {
@@ -825,14 +991,31 @@ h1,h2,h3,p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media @mobiles {
+      width: 100%;
+      padding: 40px 35px;
+    }
   }
 
   &__left {
     background-color: @yellow;
+    order: 1;
   }
   &__right {
     background-color: @blue;
     padding-left: 50px;
+    order: 2;
+    
+    @media @mobiles {
+      
+    }
+  }
+
+  @media @mobiles {
+    margin-left: -15px;
+    margin-right: -15px;
+    padding: 0;
   }
 } 
 
