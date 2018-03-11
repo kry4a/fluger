@@ -20,7 +20,6 @@ $(function (){
   });
 
   $('body').delegate('.scroll-to-target', 'click', function(e) {
-    console.log('scroll-to-target');
     var target = $(this).attr('href');
     var offset = 200;
     if ($(this).data('offset') != undefined) offset = $(this).data('offset');
@@ -30,6 +29,24 @@ $(function (){
     return false;
   });
 
+  $('body').delegate('.overlay__close', 'click', function(e) {
+    $('body').removeClass('noscroll');
+    $('.overlay').removeClass('overlay--active');
+
+    if ($(this).hasClass('overlay__close--remove')) {
+      $(this).closest('.overlay').remove();
+    }
+    return false;
+  });
+
+  $('body').delegate('*[data-event="jqm"]', 'click', function(e) {
+    var overlay = $(this).data('overlay');
+    if (overlay) {
+      $('#'+overlay).addClass('overlay--active');
+      $('body').addClass('noscroll');
+    }
+    return false;
+  });
 });
 
 
