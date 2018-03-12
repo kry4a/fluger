@@ -31,6 +31,7 @@ $(function (){
 
   $('body').delegate('.overlay__close', 'click', function(e) {
     $('body').removeClass('noscroll');
+    $('html').removeClass('noscroll');
     $('.overlay').removeClass('overlay--active');
 
     if ($(this).hasClass('overlay__close--remove')) {
@@ -44,8 +45,17 @@ $(function (){
     if (overlay) {
       $('#'+overlay).addClass('overlay--active');
       $('body').addClass('noscroll');
+      $('html').addClass('noscroll');
     }
     return false;
+  });
+
+  $('.toggler').click(function(e){
+    var _target = $(this).data('target');
+    var _class = $(this).data('class');
+    $('#'+_target).toggleClass(_class);
+    $('body').toggleClass('noscroll');
+    $('html').toggleClass('noscroll');
   });
 });
 

@@ -36,7 +36,6 @@ h1,h2,h3,p {
     height: 100%;
 
     @media @mobiles {
-      //display: block;
       flex-direction: column;
       justify-content: space-between;
       margin-left: unset;
@@ -99,17 +98,7 @@ h1,h2,h3,p {
     }
   }
 
-  &--active {
-    top: 0;
-    height: 100%;
-    position: fixed;
-    z-index: 2;
-    width: 100%;
-
-    .container {
-      height: 100%;
-    }
-  }
+  
   &__row {
     background-color: @white;
     
@@ -207,12 +196,44 @@ h1,h2,h3,p {
     display: block;
     clear: both;
   }
+
+  @media @mobiles {
+    position: fixed;
+    top: 40px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    max-height: 0;
+    
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(.13,-0.54,.71,1.04);
+    
+    .container {
+      height: 100%;
+    }
+
+    &--active {
+
+      height: ~'calc(100% - 40px)';
+      max-height: ~'calc(100% - 40px)';
+      transition: max-height 0.3s cubic-bezier(.13,-0.54,.71,1.04);
+      
+      
+    }
+  }
+
+
 }
 
 .stripe {
   display: none;
   height: 40px;
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+
   &__row {
     background-color: @yellow;
     position: relative;
@@ -227,8 +248,8 @@ h1,h2,h3,p {
       border: 20px solid transparent; 
       border-left: 20px solid @yellow; 
       z-index: 2;
-
     }
+
     &:after {
       content: '';
       position: absolute;
@@ -255,6 +276,13 @@ h1,h2,h3,p {
     line-height: 40px;
     color: #ffffff;
   }
+  &__toggler {
+    position: absolute;
+    right: 15px;
+    top: 0;
+    bottom: 0;
+    margin:auto;
+  }
 
   @media @mobiles {
     display: block;
@@ -262,18 +290,14 @@ h1,h2,h3,p {
 }
 
 
-.navbar-toggler {
+.toggler {
   display: none;
   
   border: none;
   width: 20px;
   height: 20px;
   cursor: pointer;
-  position: absolute;
-  right: 15px;
-  top: 0;
-  bottom: 0;
-  margin:auto;
+  
   @media @mobiles {
     display: block;
   }
@@ -300,6 +324,9 @@ h1,h2,h3,p {
 .main {
   &--fixed {
     margin-top: 170px;
+    @media @mobiles {
+      margin-top: 0;
+    }
   }
 }
 
@@ -322,7 +349,7 @@ h1,h2,h3,p {
   }
 
   &--about {
-    
+    padding-top: 0;
 
     .container {
       padding-top: 50px;
@@ -374,6 +401,21 @@ h1,h2,h3,p {
     &--yellow {
       color:@yellow;
       font-size: 24px;
+    }
+
+    @media @mobiles {
+      margin-bottom: 30px;
+    }
+  }
+  
+  @media @mobiles {
+    padding: 30px 0;
+    &--slider {
+      padding: 0;
+    }
+
+    &--about {
+      padding-top: 0;
     }
   }
 }
@@ -455,10 +497,12 @@ h1,h2,h3,p {
     @media @mobiles {
       display: block;
       width: 100%;
-      height: 100%;
+      flex-grow: 1;
       
-      
-
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      transition: background-color 0.3s ease;
       &:hover {
         background-color: @white;
       }
@@ -474,7 +518,7 @@ h1,h2,h3,p {
     font-weight: 200;
     color:#000000;
 
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 
     height: 50px;
     line-height: 50px;
@@ -495,12 +539,20 @@ h1,h2,h3,p {
 
     @media @mobiles {
       text-align: left;
-      height: 100%;
+      
       width: 100%;
       
-      display: flex;
-      align-items: center;
+      
       padding-left: 15px;
+      
+      display: flex;
+      flex-direction: column;
+      
+      justify-content: center;
+      
+      align-content: center;
+      
+      flex-grow: 1;
     }
     @media @mobiles {
       &--icon {
@@ -706,6 +758,8 @@ h1,h2,h3,p {
     @media @mobiles {
       height: 100%;
       width: auto;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
 }
@@ -921,7 +975,7 @@ h1,h2,h3,p {
     position: relative;
     height: 400px;
     @media @mobiles {
-      height: 300px;
+      height: auto;
     }
   }
 
@@ -929,6 +983,20 @@ h1,h2,h3,p {
     position: absolute;
     left: 0;
     top: 0;
+
+    &--fixed {
+      position: relative;
+      display: none;
+      
+    }
+
+    @media @mobiles {
+      display: none;
+
+      &--fixed {
+        display: block;
+      }
+    }
   }
 
   &__title {
@@ -967,9 +1035,23 @@ h1,h2,h3,p {
     width: 95%;
     @media @mobiles {
       display: block;
+
     }
   }
 
+  &__param {
+    @media @mobiles {
+      margin-bottom: 15px;
+    }
+  }
+  
+
+  @media @mobiles {
+    padding-top: 0px;
+    &:after {
+      content: none;
+    }
+  }
 }
 
 .list {
@@ -979,6 +1061,9 @@ h1,h2,h3,p {
   
   &--fluger {
     margin: 30px 0;
+    @media @mobiles {
+      margin-top: 0;
+    }
   }
 
   &__item {
@@ -997,6 +1082,11 @@ h1,h2,h3,p {
         width: 15px;
         height: 15px;
 
+      }
+
+      @media @mobiles {
+        display: inline-block;
+        margin-right: 15px;
       }
     }
   
@@ -1035,6 +1125,10 @@ h1,h2,h3,p {
         background-repeat: no-repeat;
 
       }
+
+      @media @mobiles {
+        padding-left: 60px;
+      }
     }
     &--fresh:before {background-image: url('../img/icon-fresh.png');}
     &--detail:before {background-image: url('../img/icon-detail.png');}
@@ -1069,6 +1163,7 @@ h1,h2,h3,p {
       
       position: relative;
       margin-right: 25px;
+      
       &:before {
         content: '';
         position: absolute;
@@ -1190,6 +1285,7 @@ h1,h2,h3,p {
 .footer {
   position: relative;
   padding: 50px 0;
+
   &:before {
     content: '';
     position: absolute;
@@ -1247,9 +1343,11 @@ h1,h2,h3,p {
   }
 
   @media @mobiles {
-    margin-left: -15px;
-    margin-right: -15px;
+    
     padding: 0;
+    .container {
+      padding: 0;
+    }
   }
 } 
 
