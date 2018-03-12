@@ -40,13 +40,14 @@ $(function (){
     return false;
   });
 
-  $('body').delegate('*[data-event="jqm"]', 'click', function(e) {
-    var overlay = $(this).data('overlay');
-    if (overlay) {
-      $('#'+overlay).addClass('overlay--active');
+  $('body').delegate('.product', 'click', function(e) {
+    console.log('product');
+    //var overlay = $(this).data('overlay');
+    //if (overlay) {
+      $('.overlay').addClass('overlay--active');
       $('body').addClass('noscroll');
       $('html').addClass('noscroll');
-    }
+    //}
     return false;
   });
 

@@ -38,8 +38,7 @@ h1,h2,h3,p {
     @media @mobiles {
       flex-direction: column;
       justify-content: space-between;
-      margin-left: unset;
-      margin-right: unset;
+      
     }
   }
 
@@ -182,6 +181,10 @@ h1,h2,h3,p {
         width: 100%;
         height: 80%;
       }
+
+      @media @tablet {
+        width: 60%;
+      }
     }
 
     &--callback {
@@ -268,6 +271,7 @@ h1,h2,h3,p {
     .container {
       background-color: @blue;
       padding-right: 50px;
+      width: 100%;
     }
   }
 
@@ -324,10 +328,16 @@ h1,h2,h3,p {
 .main {
   &--fixed {
     margin-top: 170px;
+    
     @media @mobiles {
-      margin-top: 0;
+      margin-top: 40px;
     }
   }
+
+  @media @mobiles {
+    margin-top: 40px;
+  }
+  
 }
 
     
@@ -406,6 +416,10 @@ h1,h2,h3,p {
     @media @mobiles {
       margin-bottom: 30px;
     }
+
+    @media @tablet {
+      margin-bottom: 30px;
+    }
   }
   
   @media @mobiles {
@@ -469,6 +483,16 @@ h1,h2,h3,p {
 
       background-color: @white;
     }
+
+    @media @tablet {
+      padding-left: 50px;
+    }
+    @media @desktop {
+      padding-left: 50px;
+    }
+    @media @desktop-xl {
+      padding-left: 50px;
+    }
   }
   @media @mobiles {
     height: 100%;
@@ -484,7 +508,7 @@ h1,h2,h3,p {
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  
+  padding-left: 0;
   
 
   &__item {
@@ -708,6 +732,10 @@ h1,h2,h3,p {
     @media @mobiles {
       font-size: 18px;
     }
+
+    @media @tablet {
+      font-size: 18px;
+    }
   }
 
   &__name {
@@ -731,14 +759,28 @@ h1,h2,h3,p {
     @media @mobiles {
       height: 400px;
     }
+
+    @media @tablet {
+      height: 400px;
+    }
+    @media @desktop {
+      height: 450px;
+    }
+    .container {
+      position: relative;
+      height: 100%;
+    }
   }
 
   &__desc {
     position: absolute;
     left: 15px;
-    top: 150px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
     color: @white;
     width: 300px;
+    height: 150px;
   }
 
   &__title {
@@ -756,6 +798,13 @@ h1,h2,h3,p {
     position: absolute;
 
     @media @mobiles {
+      height: 100%;
+      width: auto;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @media @tablet {
       height: 100%;
       width: auto;
       left: 50%;
@@ -797,11 +846,19 @@ h1,h2,h3,p {
       margin-bottom: 15px;
     }
     
+    @media @tablet {
+      margin-bottom: 30px;
+    }
     &--clear {
       height: 30px;
       margin-bottom: 40px;
       @media @mobiles {
         display: none;
+      }
+
+      @media @tablet {
+        height: 60px;
+        margin-bottom: 30px;
       }
     }
 
@@ -915,9 +972,19 @@ h1,h2,h3,p {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    @media @mobiles {
+      width: 15px;
+      height: 15px;
+    }
   }
   &--cold:before { background-image: url('../img/icon-cold.png');}
   &--warm:before { background-image: url('../img/icon-hot.png');}
+
+  @media @mobiles {
+    font-size: 14px;
+    font-weight: 200;
+    padding-left: 30px;
+  }
 }
 
 .about {
@@ -930,12 +997,24 @@ h1,h2,h3,p {
     @media @mobiles {
       width: 100%;
     }
+    @media @tablet {
+      width: 50%;
+    }
+    @media @desktop {
+      width: 60%;
+    }
   }
 
   &__info {
     width: 25%;
     @media @mobiles {
       width: 100%;
+    }
+    @media @tablet {
+      width: 45%;
+    }
+    @media @desktop {
+      width: 35%;
     }
   }
 
@@ -976,6 +1055,14 @@ h1,h2,h3,p {
     height: 400px;
     @media @mobiles {
       height: auto;
+    }
+
+    @media @tablet {
+      height: 230px;
+    }
+
+    @media @desktop {
+      height: 330px;
     }
   }
 
@@ -1035,7 +1122,13 @@ h1,h2,h3,p {
     width: 95%;
     @media @mobiles {
       display: block;
+    }
 
+    @media @tablet {
+      width: 100%;
+    }
+    @media @desktop {
+      width: 100%;
     }
   }
 
@@ -1178,6 +1271,9 @@ h1,h2,h3,p {
         background-size: contain;
 
       }
+      @media @tablet {
+        margin-bottom: 10px;
+      }
     }
 
     &--fluger-purple {
@@ -1229,6 +1325,27 @@ h1,h2,h3,p {
     &--bb {
       border-bottom: 1px solid @black;
     }
+
+    &--title {
+      padding-bottom: 0;
+      
+      @media @mobiles {
+        height: 70px;
+        .table__cell {
+          margin-bottom: 0;
+        }
+      }
+    }
+    @media @mobiles {
+      display: block;
+      position: relative;
+      margin-bottom: 15px;
+      &--title {
+        display: flex;
+      }
+
+
+    }
   }
 
   &__cell {
@@ -1246,6 +1363,25 @@ h1,h2,h3,p {
 
     &:last-child {
       text-align: right;
+      @media @mobiles {
+        text-align: left; 
+      }
+    }
+
+    @media @mobiles {
+      height: auto;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    &--weight {
+      @media @mobiles {
+        position: absolute;
+        right: 0;
+        top: 0;
+        text-align: right;
+      }
     }
   }
 
@@ -1285,7 +1421,7 @@ h1,h2,h3,p {
 .footer {
   position: relative;
   padding: 50px 0;
-
+  overflow: hidden;
   &:before {
     content: '';
     position: absolute;
@@ -1331,6 +1467,31 @@ h1,h2,h3,p {
   &__left {
     background-color: @yellow;
     order: 1;
+    
+    
+    @media @mobiles {
+      position: relative;
+      &:before {
+        content: '';
+        background-color: @yellow;
+        width: 100%;
+        height: 100%;
+        left: -50%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+      }
+      &:after {
+        content: '';
+        background-color: @yellow;
+        width: 100%;
+        height: 100%;
+        right: -50%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+      }
+    }
   }
   &__right {
     background-color: @blue;
@@ -1338,7 +1499,31 @@ h1,h2,h3,p {
     order: 2;
     
     @media @mobiles {
-      
+      position: relative;
+      &:before {
+        content: '';
+        background-color: @blue;
+        width: 100%;
+        height: 100%;
+        left: -50%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+      }
+      &:after {
+        content: '';
+        background-color: @blue;
+        width: 100%;
+        height: 100%;
+        right: -50%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    @media @tablet {
+      padding-left: 40px;
     }
   }
 
@@ -1417,9 +1602,21 @@ h1,h2,h3,p {
   &__row {
     display: flex;
     margin-bottom: 30px;
+    @media @mobile-xs {
+      display: block;
+    }
   }
   &__image, &__desc {
     width: 50%;
+    @media @mobile-xs {
+      width: 100%;
+    }
+  }
+  
+  &__image {
+    @media @mobile {
+      width: 20%;
+    }
   }
 
   &__desc {
@@ -1427,6 +1624,16 @@ h1,h2,h3,p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @media @mobile {
+      width: 80%;
+      padding: 15px 15px 0 15px;
+    }
+
+    @media @mobile-xs {
+      padding: 15px 0;
+
+    }
   }
 
   &__title {
@@ -1435,6 +1642,10 @@ h1,h2,h3,p {
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
+
+    @media @mobiles {
+      margin-bottom: 30px;
+    }
   }
 
   &__text {
@@ -1443,11 +1654,19 @@ h1,h2,h3,p {
 
   &__storage {
     margin-bottom: 45px;
+
+    @media @mobiles {
+      margin-bottom: 30px;
+    }
   }
 
   .product__params {
     font-size: 24px;
     margin-bottom: 0;
+  }
+
+  @media @mobiles {
+    width: 90%;
   }
 }
 
