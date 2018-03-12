@@ -113,42 +113,7 @@ h1,h2,h3,p {
   &__row {
     background-color: @white;
     
-    &--mobiles {
-      display: none;
-      height: 40px;
-      background-color: @yellow;
-      position: relative;
-      padding-left: 45px;
-      text-align: right;
 
-      &:before {
-        content: '';
-        position: absolute;
-        left: 45px;
-        top: 0;
-        border: 20px solid transparent; 
-        border-left: 20px solid @yellow; 
-        z-index: 2;
-
-      }
-      &:after {
-        content: '';
-        position: absolute;
-        left: 40px;
-        top: 0;
-        bottom: 0;
-        margin: auto;
-        
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: @blue;
-        z-index: 3;
-      }
-      @media @mobiles {
-        display: block;
-      }
-    }
 
     &--top {
       height: 120px;
@@ -244,11 +209,58 @@ h1,h2,h3,p {
   }
 }
 
-.pager {
+.stripe {
+  display: none;
   height: 40px;
-  line-height: 40px;
-  color: #ffffff;
+  
+  &__row {
+    background-color: @yellow;
+    position: relative;
+    padding-left: 45px;
+    text-align: right;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 45px;
+      top: 0;
+      border: 20px solid transparent; 
+      border-left: 20px solid @yellow; 
+      z-index: 2;
+
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 40px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: @blue;
+      z-index: 3;
+    }
+    
+    .container {
+      background-color: @blue;
+      padding-right: 50px;
+    }
+  }
+
+  &__pager {
+    height: 40px;
+    line-height: 40px;
+    color: #ffffff;
+  }
+
+  @media @mobiles {
+    display: block;
+  }
 }
+
 
 .navbar-toggler {
   display: none;
