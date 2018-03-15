@@ -58,6 +58,22 @@ $(function (){
     $('body').toggleClass('noscroll');
     $('html').toggleClass('noscroll');
   });
+
+  var w_width = $(window).width();
+  if (w_width>767 && $('.parallax').length) {
+    var parallax_1 = document.querySelectorAll(".parallax__inner");
+      speed = 0.25;
+
+    window.onscroll = function(){
+      [].slice.call(parallax_1).forEach(function(el,i){
+
+        var windowYOffset = window.pageYOffset,
+            big_pos = "50% " + (windowYOffset * speed) + "px";
+            el.style.backgroundPosition = big_pos;
+      });
+      
+    };
+  }
 });
 
 
