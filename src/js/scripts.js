@@ -20,7 +20,7 @@ $(function (){
   });
 
   $('body').delegate('.scroll-to-target', 'click', function(e) {
-    var target = $(this).attr('href');
+    var target = $(this).data('target');
     var offset = 200;
     if ($(this).data('offset') != undefined) offset = $(this).data('offset');
     
