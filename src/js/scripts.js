@@ -21,33 +21,48 @@ $(function (){
 
   $('body').delegate('.scroll-to-target', 'click', function(e) {
     var target = $(this).data('target');
-    var offset = 200;
-    if ($(this).data('offset') != undefined) offset = $(this).data('offset');
+    if ($(target).length) {
+      var offset = 200;
+      if ($(this).data('offset') != undefined) offset = $(this).data('offset');
     
-    $.scrollTo(target, 600, { offset: -offset });
+      $.scrollTo(target, 600, { offset: -offset });
+
+      return false;
+    }
     
-    return false;
+    
   });
 
   $('body').delegate('.overlay__close', 'click', function(e) {
     $('body').removeClass('noscroll');
     $('html').removeClass('noscroll');
     $('.overlay').removeClass('overlay--active');
-
-    if ($(this).hasClass('overlay__close--remove')) {
-      $(this).closest('.overlay').remove();
-    }
+    $(this).closest('.overlay').remove();
     return false;
   });
 
-  $('body').delegate('.product', 'click', function(e) {
-    console.log('product');
-    //var overlay = $(this).data('overlay');
-    //if (overlay) {
-      $('.overlay').addClass('overlay--active');
-      $('body').addClass('noscroll');
-      $('html').addClass('noscroll');
-    //}
+  $('body').delegate('*[data-action="popup"]', 'click', function(e) {
+    var target = $(this).data('target');
+    $.ajax({
+      method: 'POST',
+      url: '/index.php?route=product/product',
+      dataType: 'json',
+      data: {
+        product_id:target
+      },
+      success: function (data) {
+        $('body').prepend(data);
+        setTimeout(function(){
+          $('.overlay').addClass('overlay--active');
+          $('body').addClass('noscroll');
+          $('html').addClass('noscroll');
+        }, 50);
+        
+      },
+      error: function(xhr, ajaxOptions, thrownError) {
+        alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+      }
+    });
     return false;
   });
 

@@ -119,6 +119,7 @@ h1,h2,h3,p {
 
         .container {
           padding: 0;
+          width: 100%;
         }
       }
     }
@@ -1353,21 +1354,27 @@ h1,h2,h3,p {
     justify-content: space-between;
 
 
-    &--blue { background-color: @blue; }
-    &--yellow { background-color: @yellow; }
-    &--orange { background-color: @orange; }
-    &--red { background-color: @red; }
-    &--purple { background-color: @purple; }
-    &--green { background-color: @green; }
-    &--tomato { background-color: @tomato; }
+    &--fish { background-color: @blue; }
+    &--crisp { background-color: @yellow; }
+    &--crack { background-color: @orange; }
+    &--cheese { background-color: @orange; }
+    &--caviar { background-color: @red; }
+    &--snack { background-color: @purple; }
+    &--nut { background-color: @green; }
+    &--meat { background-color: @tomato; }
+
 
     &--bb {
       border-bottom: 1px solid @black;
+      &:last-child {
+        border-bottom: none;
+      }
     }
 
     &--title {
       padding-bottom: 0;
-      
+      margin-top: -1px;
+
       @media @mobiles {
         height: 70px;
         .table__cell {
